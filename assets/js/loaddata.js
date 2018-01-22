@@ -1,7 +1,9 @@
+//Dynamically Create popups (Currently not used - trying to add dynamically added stations)
+
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: "testdata.csv",
+        url: "data/main.csv",
         dataType: "text",
         success: function(data) {
             var allData = data.split(/\r?\n|\r/);
@@ -11,6 +13,13 @@ $(document).ready(function() {
                 popupTitle = currentData[1];
                 popupTime = currentData[2];
                 popupRoom = currentData[3];
+                var j = 4;
+                var popupYears = []
+                while (j < currentData.length) {
+                    currentYear = currentData[j].replace(/\"/g, "")
+                    popupYears.push(currentYear);
+                    j++
+                }
 
                 popupTimeArr = popupTime.split("-");
                 weekdaysArr = ["Monday","Tuesday","Wednesday","Thursday","Friday"];
@@ -34,14 +43,24 @@ $(document).ready(function() {
 
                 time = document.createElement("p");
                 $(time).attr("data-time",popupTime)
-                timeText = document.createTextNode(day + " " + eventTime);
+                $(time).addClass("time");
+                timeText = document.createTextNode("Time: " + day + " " + eventTime);
                 time.appendChild(timeText);
                 content.append(time);
 
                 room = document.createElement("p");
-                roomText = document.createTextNode(popupRoom);
+                $(room).attr("data-room",popupRoom);
+                $(room).addClass("room");
+                roomText = document.createTextNode("Room: "+popupRoom);
                 room.appendChild(roomText);
                 content.append(room);
+
+                year = document.createElement("p");
+                $(year).addClass("years");
+                $(year).attr("data-years","{"+popupYears+"}")
+                yearText = document.createTextNode("Years: "+popupYears);
+                year.appendChild(yearText);
+                content.append(year);
 
                 arrowdown = document.createElement("div");
                 $(arrowdown).addClass("arrow-down");

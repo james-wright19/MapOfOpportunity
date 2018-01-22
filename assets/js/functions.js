@@ -6,12 +6,20 @@ var currentEvents = new Array();
 $( document ).ready(function() {
     //Run functions when document is ready
     popupID(); //Gives each of the popups on the page a unique id
-    draggable(); //Use jquery ui to make draggable objects
     trimSvgWhitespace(); //Remove whitespace from svg's (fixes postioning issues)
     addLabel(); //Add labels
     popupHover(); //Script to make popups appear on hover
     popupClick(); //Script to stick the popups when you click on the station
     //yearSelector(); (doesnt work)
+
+    //Ensures that dynamically created popups are draggable and that the draggable function isnt contantly run :)
+    clicked = 0;
+    if (clicked == 0) {
+        $(document).on('click',function () {
+            draggable(); //Make stuff draggable
+            clicked = 1;
+        });
+    }
 
     //Cick functions to run actions
     $('.opn-timetable').on('click', function() {
@@ -157,7 +165,7 @@ function draggable() {
     var top = 0
     $( ".popup" ).draggable({
         start: function(event, ui) {
-            $(".dropArea").fadeIn();
+            //$(".dropArea").fadeIn();
         }, containment: $(document.body),
         scroll: false,
         revert : function() {
