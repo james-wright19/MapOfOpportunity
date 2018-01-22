@@ -1,0 +1,54 @@
+.timetable
+    width: 80%
+    height: 80%
+    background: #fff
+    position: fixed
+    top: 1000px
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 900
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)
+
+    display: none
+
+    .close-timetable
+        background: #008B95
+        text-align: center
+        position: absolute
+        top: -10px
+        right: -10px
+        +size(30px)
+        cursor: pointer
+        border-radius: 50%
+        line-height: 30px
+        font-weight: bold
+        color: #DFE2DB
+        transition: all .3s ease-in
+
+        &:hover
+            color: #FFF
+
+    table
+        width: 100%
+        height: 100%
+
+        .day
+            z-index: 999
+            width: 25%
+            //border-left: 1px solid darken(#d8d8d8, 100%)
+            //border-bottom: 1px solid darken(#d8d8d8, 100%)
+
+        h1,p
+            text-align: center
+            color: #212121
+            font-family: 'Roboto', sans-serif
+
+    .print
+        position: absolute
+        right: 10px
+        bottom: 10px
+        cursor: pointer
+
+.tt-remove
+    cursor: pointer

@@ -1,0 +1,27 @@
+{
+  "name": "GulpStarterKit",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.1"
+  },
+  "author": "James Wright",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdguy17/GulpStarterKit"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "browsersync",
+    "jade"
+  ],
+  "bugs": {
+    "url": "https://github.com/jdguy17/GulpStarterKit/issues"
+  },
+  "homepage": "https://github.com/jdguy17/GulpStarterKit"
+}

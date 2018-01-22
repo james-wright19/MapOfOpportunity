@@ -1,0 +1,56 @@
+//Main SVG control class -- the map!!
+.svg-wrap
+    position: relative
+    height: 100%
+    padding-left: 150px
+
+svg
+    float: left
+    position: absolute
+    height: 70%
+    top: 50%
+    transform: translateY(-50%)
+
+    text
+        letter-spacing: 0.01em
+
+.line
+    stroke-miterlimit: 10
+    stroke-width: 8px
+    fill: none
+
+.multi-station
+    fill: #fff
+    stroke: #000
+    stroke-width: 4px
+    stroke-miterlimit: 10
+    cursor: pointer
+
+.norm
+    cursor: pointer
+    stroke-width: 8px
+
+.line-subject-help
+    stroke: $subject-help
+
+.line-sport
+    stroke: $sport
+
+.line-outdoor
+    stroke: $outdoor
+
+.line-performance
+    stroke: $performance
+
+.line-extended-learning
+    stroke: $extended-learning
+
+.line-trip
+    stroke: $trip
+
+@media #{$tablet}
+    .svg-wrap
+        height: 200%
+
+    svg
+        height: 80%

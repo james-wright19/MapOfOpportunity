@@ -1,0 +1,46 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1039 357">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #ffd329;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 8px;
+      }
+
+      .cls-2 {
+        stroke: #ff1d25;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        stroke: #000;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-width: 4px;
+      }
+
+      .cls-4 {
+        stroke: #ff931e;
+      }
+    </style>
+  </defs>
+  <title>test</title>
+  <path class="cls-1" d="M82,153h26.82a614.36,614.36,0,0,1,99.6,8.13h0a650.66,650.66,0,0,1,75.68,17.12L653.79,285.42a419.42,419.42,0,0,0,60.47,12.79h0a419.42,419.42,0,0,0,56.3,3.8H1121" transform="translate(-82 -149)"/>
+  <path class="cls-2" d="M82,212h27.57a593,593,0,0,0,153.26-20.15l34-9.1,8.31-2.18A840.55,840.55,0,0,1,518.67,153H1051" transform="translate(-82 -149)"/>
+  <circle class="cls-3" cx="220" cy="34" r="17"/>
+  <path class="cls-4" d="M82,504H273.9a378.59,378.59,0,0,0,76.45-7.8h0a378.59,378.59,0,0,0,64.49-19.42L451,462.29a378.59,378.59,0,0,1,69.23-20.36L531,439.86A378.59,378.59,0,0,1,602.69,433H1121" transform="translate(-82 -149)"/>
+  <line class="cls-4" x1="131" y1="357" x2="131" y2="343"/>
+  <line class="cls-4" x1="576" y1="285" x2="576" y2="271"/>
+  <line class="cls-4" x1="949" y1="285" x2="949" y2="271"/>
+</svg>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Map of Opportunity</title>
+        <link rel="stylesheet" href="assets/css/main.css">
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+        <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+        <script src="assets/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="assets/js/functions.js"></script>
+        <script type="text/javascript" src="assets/js/loaddata.js"></script>
+        <link rel="icon" href="assets/img/favicon.png">
+	    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    </head>
+    <body>
+        <img src="assets/img/logo.png" alt="student commision logo" class="logo">
+
+        <!--
+            SVG Stuff
+            Station default classes - norm station line-extended-learning
+            Line default classes - line line-(NAME)
+        !-->
+        <div class="svg-wrap">
+            <svg viewBox="0 0 1920 1080">
+                <g>
+                	<path class="line line-extended-learning" d="M84,870.5h334.6h3.9c20.5,0,40.2-8.1,54.7-22.6l0,0l146.4-146.4l0,0c9.9-9.9,23.3-15.4,37.2-15.4h5.4h235.7
+                		h1.5c14.7,0,28.4-7.5,36.4-19.8l0,0l192.8-298.5v0c7.1-11,19.3-17.7,32.5-17.7h7.1H1340"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Fine Art Group" id="fineartgroup" data-year="11" data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="label" class="norm station line-extended-learning" x1="1336" y1="350" x2="1336" y2="328"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Arts Award" id="arts" data-year="7,8" class="norm station line-extended-learning" x1="1223" y1="350" x2="1223" y2="328"/>
+                	<line data-leftlabel="-65" data-toplabel="5" data-leftpopup="0" data-toppopup="0" data-name="KS3 Coding Club" id="codingclub" data-year="7,8,9" class="norm station line-extended-learning" x1="1125.1" y1="372.2" x2="1106.5" y2="360.4"/>
+                	<line data-leftlabel="-95" data-toplabel="5" data-leftpopup="0" data-toppopup="0" data-name="Raspberry Pi Competition" id="rasppie" data-year="7" class="norm station line-extended-learning" x1="1064.5" y1="467.6" x2="1045.9" y2="455.8"/>
+                	<line data-leftlabel="-40" data-toplabel="5" data-leftpopup="0" data-toppopup="0" data-name="Mentoring" id="mentor" data-year="7" class="norm station line-extended-learning" x1="1008.1" y1="556.2" x2="989.5" y2="544.4"/>
+                	<line data-leftlabel="-70" data-toplabel="5" data-leftpopup="0" data-toppopup="0" data-name="Tycoon in Schools" id="tycoon" data-year="10" class="norm station line-extended-learning" x1="958.5" y1="635.6" x2="939.9" y2="623.8"/>
+                	<line data-leftlabel="-10" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Young Enterpise" id="youngent" data-year="12" class="norm station line-extended-learning" x1="736" y1="687" x2="736" y2="665"/>
+                	<line data-leftlabel="-70" data-toplabel="5" data-leftpopup="0" data-toppopup="0" data-name="Subway Challenge" id="subway" data-year="10,11" class="norm station line-extended-learning" x1="562.5" y1="759.8" x2="546.9" y2="744.3"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="ELO" id="elo" data-year="7,8,9" class="norm station line-extended-learning" x1="405" y1="871" x2="405" y2="849"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Literature Society" id="litclub" data-year="9" class="norm station line-extended-learning"  x1="292" y1="871" x2="292" y2="849"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Military History Club" id="milhis" data-year="10,11,12,13" class="norm station line-extended-learning" x1="88" y1="871" x2="88" y2="849"/>
+                    <line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="IFS Student Investor Challenge" id="ifs" data-year="12,13" class="norm station line-extended-learning" x1="1150" y1="689" x2="1150" y2="667"/>
+                	<line data-leftlabel="0" data-toplabel="45" data-leftpopup="0" data-toppopup="0" data-name="Design Ventura" id="desven" data-year="9" class="norm station line-extended-learning" x1="986" y1="705" x2="986" y2="683"/>
+                	<line class="line line-extended-learning" x1="895" y1="686" x2="1154" y2="686"/>
+                </g>
+                <g>
+                    <path class="line line-subject-help" d="M78.3,629.3h129h0.2c12.7,0,24.8,5,33.8,14h0l107.5,107.5l157,157v0c8.3,8.3,19.6,13,31.4,13h5.1h279"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Sketchbook Support" data-year="12,13" id="sketchsupport" class="norm station line-subject-help" x1="82.3" y1="606.3" x2="82.3" y2="628.3"/>
+                	<line data-leftlabel="90" data-toplabel="0" data-leftpopup="10" data-toppopup="0" data-name="Art Enrichment Session" data-year="7" id="artenrichment" class="norm station line-subject-help" x1="274.4" y1="644" x2="258.8" y2="659.5"/>
+                	<line data-leftlabel="85" data-toplabel="0" data-leftpopup="10" data-toppopup="0" data-name="Psychology Catch-up" data-year="12,13" id="psychocatchup" class="norm station line-subject-help" x1="342.7" y1="713" x2="327.1" y2="728.5"/>
+                	<line data-leftlabel="80" data-toplabel="0" data-leftpopup="10" data-toppopup="0" data-name="Business Help Club" data-year="10,11" id="businesshelp" class="norm station line-subject-help" x1="401.7" y1="772" x2="386.1" y2="787.5"/>
+                	<line data-leftlabel="15" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="English SPAG Club" data-year="7" id="englishspag" class="norm station line-subject-help" x1="556.3" y1="898.3" x2="556.3" y2="920.3"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Chemistry Mentoring" data-year="11" id="chemistrymentor" class="norm station line-subject-help" x1="817" y1="898" x2="817" y2="920"/>
+                	<path class="line line-subject-help" d="M1397.3,643.3L1397.3,643.3l-107.5,107.5l-157,157v0c-8.3,8.3-19.6,13-31.4,13h-5.1h-279"/>
+                	<line data-leftlabel="-85" data-toplabel="5" data-leftpopup="0" data-toppopup="0" data-name="History Homework Club" data-year="7,8,9" id="hishomework" class="norm station line-subject-help" x1="1379.2" y1="630" x2="1394.9" y2="645.5"/>
+                	<line data-leftlabel="-85" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="History GCSE Revision" data-year="11" id="hisgcserev" class="norm station line-subject-help" x1="1236.8" y1="772" x2="1252.4" y2="787.5"/>
+                	<line data-leftlabel="0" data-toplabel="50" data-leftpopup="0" data-toppopup="0" data-name="English GCSE Revision Sessions" data-year="11" id="englishgcse" class="norm station line-subject-help" x1="938" y1="922" x2="938" y2="944"/>
+                </g>
+                <g>
+                	<path class="line line-performance" d="M74,290h573.6h4.2c19.3,0,37.9,7.7,51.5,21.4v0l243,243l0,0c11.9,11.9,28.2,18.7,45.1,18.7h2.7H1233l0,0
+                		c23.1,0,45.2-9.2,61.5-25.5l6.5-6.5l232-232"/>
+                    <line class="line line-performance" x1="1528" y1="573" x2="1233" y2="573"/>
+                    <line class="line line-performance" x1="1389" y1="293" x2="652" y2="290"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Flute Choir" id="flutechoir" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="78" y1="290" x2="78" y2="268"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Big Band" id="bigband" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="209" y1="290" x2="209" y2="268"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Clarinet Group 2" id="clarinet2" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="326" y1="290" x2="326" y2="268"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Orchestra" id="orchestra" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="487" y1="290" x2="487" y2="268"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="String Orchestra" id="stringorchestra" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="611" y1="290" x2="611" y2="268"/>
+                	<line data-leftlabel="75" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Clarinet Group 1" id="clarinet1" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="741.3" y1="346" x2="756.9" y2="330.4"/>
+                	<line data-leftlabel="100" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Senior Brass Ensemble" id="seniorbrass" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="829.1" y1="433.6" x2="844.7" y2="418"/>
+                	<line data-leftlabel="10" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Junior Choir" id="junchoir" data-year="7,8,9" class="norm station line-performance" x1="1065" y1="572" x2="1065" y2="550"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Concert Band 2" id="concband2" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="1189" y1="572" x2="1189" y2="550"/>
+                	<line data-leftlabel="-70" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Training Orchestra" id="trainorch" data-year="7,8,9,10,11,12,13"class="norm station line-performance" x1="1330.3" y1="511.9" x2="1314.6" y2="496.4"/>
+                	<line data-leftlabel="-80" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Junior Brass Ensemble" id="junbrass" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="1417.4" y1="423.6" x2="1401.7" y2="408.1"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Upper Voices Chamber Choir" id="uppervoice" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="1532.4" y1="313.6" x2="1516.7" y2="298.1"/>
+                    <line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Senior Choir" id="senchoir" data-year="7,8,9,10,11,12,13" class="norm station line-performance" x1="1364" y1="550" x2="1364" y2="572"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Drama Club" id="dramaclub" data-year="7,8,9" class="norm station line-performance" x1="1524" y1="550" x2="1524" y2="572"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Sixth Form Jazz Ensemble" id="sixthformjazz" data-year="7" class="norm station line-performance" x1="845" y1="268" x2="845" y2="290"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Lower Voices Chamber Choir" id="lowervoice"  class="norm station line-performance" x1="1101" y1="268" x2="1101" y2="290"/>
+                	<line data-leftlabel="0" data-toplabel="0" data-leftpopup="0" data-toppopup="0" data-name="Senior Concert Band" id="senconcband" class="norm station line-performance" x1="1385" y1="268" x2="1385" y2="290"/>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Popups !-->
+        <!-- Popup Template
+        <div id="1-popup" class="popup" data-title="Event Title">
+            <div class="content">
+                <h1>Event Title</h1>
+                <p class="time" data-time="1-1">Time - 13:15</p>
+                <p class="room" data-room="152">Room - 152</p>
+                <p class="years" data-years="{7,8,9}">Year(s) - 7,8,9</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        -->
+
+        <div class="popup-container">
+            <!--<div id="flutechoir-popup" class="popup" data-title="Flute Chior">
+                <div class="content">
+                    <h1>Flute Choir</h1>
+                    <p class="time" data-time="1-1">Time - Monday 8:30</p>
+                    <p class="room" data-room="M2">Room - M2</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Year(s) - All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>-->
+            <div id="seniorbrass-popup" class="popup" data-title="Senior Brass Ensemble">
+                <div class="content">
+                    <h1>Senior Brass Ensemble</h1>
+                    <p class="time" data-time="1-1">Time - Monday 8:30</p>
+                    <p class="room" data-room="M1">Room - M1</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Grades 5-8</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="clarinet2-popup" class="popup" data-title="Clarinet Group 2">
+                <div class="content">
+                    <h1>Clarinet Group 2</h1>
+                    <p class="time" data-time="1-1">Time - Monday 8:30</p>
+                    <p class="room" data-room="P7">Room - P7</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Years: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="orchestra-popup" class="popup" data-title="Orchestra">
+                <div class="content">
+                    <h1>Orchestra</h1>
+                    <p class="time" data-time="1-2">Time - Monday 1:20</p>
+                    <p class="room" data-room="M1">Room - M1</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Grades 6-8</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="bigband-popup" class="popup" data-title="Big Band">
+                <div class="content">
+                    <h1>Big Band</h1>
+                    <p class="time" data-time="4-1">Time - Thursday 8:30</p>
+                    <p class="room" data-room="M1">Room - M1</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Year: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="stringorchestra-popup" class="popup" data-title="String Orchestra">
+                <div class="content">
+                    <h1>String Orchestra</h1>
+                    <p class="time" data-time="2-1">Time - Tuesday 8:30</p>
+                    <p class="room" data-room="M1">Room - M1</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Year: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="clarinet1-popup" class="popup" data-title="Clarinet Group 1">
+                <div class="content">
+                    <h1>Clarinet Group 1</h1>
+                    <p class="time" data-time="3-1">Time - Wednesday 8:30</p>
+                    <p class="room" data-room="M2">Room - M2</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Years: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="junchoir-popup" class="popup" data-title="Junior Choir">
+                <div class="content">
+                    <h1>Junior Choir</h1>
+                    <p class="time" data-time="4-1">Time - Thursday 8:30</p>
+                    <p class="room" data-room="M2">Room - M2</p>
+                    <p class="years" data-years="{7,8,9}">Years: 7,8,9</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="concband2-popup" class="popup" data-title="Concert Band 2">
+                <div class="content">
+                    <h1>Concert Band 2</h1>
+                    <p class="time" data-time="3-1">Time - Wednesday 8:30</p>
+                    <p class="room" data-room="M1">Room - M1</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Years: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="trainorch-popup" class="popup" data-title="Training Orchestra">
+                <div class="content">
+                    <h1>Training Orchestra</h1>
+                    <p class="time" data-time="3-2">Time - Wednesday 1:20</p>
+                    <p class="room" data-room="M1">Room - M1</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Years: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="junbrass-popup" class="popup" data-title="Junior Brass Ensemble">
+                <div class="content">
+                    <h1>Junior Brass Ensemble</h1>
+                    <p class="time" data-time="3-2">Time - Wednesday 1:30</p>
+                    <p class="room" data-room="Library">Room - Library</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Years: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="uppervoice-popup" class="popup" data-title="Upper Voices Chamber Choir">
+                <div class="content">
+                    <h1>Upper Voices Chamber Choir</h1>
+                    <p class="time" data-time="3-2">Time - Wednesday 1:30</p>
+                    <p class="room" data-room="M2">Room - M2</p>
+                    <p class="years" data-years="{10,11,12,13}">Years: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="senchoir-popup" class="popup" data-title="Senior Choir">
+                <div class="content">
+                    <h1>Senior Choir</h1>
+                    <p class="time" data-time="4-2">Time - Thursday 1:30</p>
+                    <p class="room" data-room="M1">Room - M1</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Years: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="dramaclub-popup" class="popup" data-title="Drama Club">
+                <div class="content">
+                    <h1>Drama Club</h1>
+                    <p class="time" data-time="1-1">Time - Unknown</p>
+                    <p class="room" data-room="Drama">Room - Drama</p>
+                    <p class="years" data-years="{7,8,9}">Years: 7-9</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="sixthformjazz-popup" class="popup" data-title="Sixth Form Jazz Ensemble">
+                <div class="content">
+                    <h1>Sixth Form Jazz Ensemble</h1>
+                    <p class="time" data-time="3-3">Time - Wednesday 2:30 (Activities)</p>
+                    <p class="room" data-room="Library">Room - Library</p>
+                    <p class="years" data-years="{12,13}">Years: 12, 13</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="lowervoice-popup" class="popup" data-title="Lower Voices Chamber Choir">
+                <div class="content">
+                    <h1>Lower Voices Chamber Choir</h1>
+                    <p class="time" data-time="4-1">Time - Thursday 8:30</p>
+                    <p class="room" data-room="M2">Room - M2</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Years: All</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="senconcband-popup" class="popup" data-title="Senior Concert Band">
+                <div class="content">
+                    <h1>Senior Concert Band</h1>
+                    <p class="time" data-time="5-1">Time - Friday 8:30</p>
+                    <p class="room" data-room="M1">Room - M1</p>
+                    <p class="years" data-years="{7,8,9,10,11,12,13}">Grades 6 - 8</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+
+            <!-- Subject Help Popups -->
+            <div id="sketchsupport-popup" class="popup" data-title="Sketchbook Support">
+                <div class="content">
+                    <h1>Sketchbook Support</h1>
+                    <p class="time" data-time="1-3">Time - Mondays 4-6pm</p>
+                    <p class="room" data-room="Unknown">Room - Unkown</p>
+                    <p class="years" data-years="{12,13}">Years: 12/13</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="artenrichment-popup" class="popup" data-title="Art Enrichment Session">
+                <div class="content">
+                    <h1>Art Enrichment Session</h1>
+                    <p class="time" data-time="1-2">Time - Mondays Lunch</p>
+                    <p class="room" data-room="Unknown">Room - Unkown</p>
+                    <p class="years" data-years="{7}">Year: 7</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="psychocatchup-popup" class="popup" data-title="Psychology Catch-Up">
+                <div class="content">
+                    <h1>Psychology Catch-Up</h1>
+                    <p class="time" data-time="3-3">Time - Unknown</p>
+                    <p class="room" data-room="Unknown">Room - Unkown</p>
+                    <p class="years" data-years="{12,13}">Year: 12/13</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="businesshelp-popup" class="popup" data-title="Business Help Club">
+                <div class="content">
+                    <h1>Business Help Club</h1>
+                    <p class="time" data-time="4-2">Time - Thursday Lunch</p>
+                    <p class="room" data-room="Unknown">Room - Unkown</p>
+                    <p class="years" data-years="{10,11}">Year: 10/11</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="englishspag-popup" class="popup" data-title="English SPAG Club">
+                <div class="content">
+                    <h1>English SPAG Club</h1>
+                    <p class="time" data-time="3-3">Time - Unknown</p>
+                    <p class="room" data-room="Unknown">Room - Unkown</p>
+                    <p class="years" data-years="{7}">Year: 7</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="englishgcse-popup" class="popup" data-title="English GCSE Revision">
+                <div class="content">
+                    <h1>English GCSE Revision</h1>
+                    <p class="time" data-time="3-3">Time - Unknown</p>
+                    <p class="room" data-room="Unknown">Room - Unkonwn</p>
+                    <p class="years" data-years="{7}">Year: 7</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="chemistrymentor-popup" class="popup" data-title="Chemistry Mentoring">
+                <div class="content">
+                    <h1>Chemistry Mentoring</h1>
+                    <p class="time" data-time="3-3">Time - Unknown</p>
+                    <p class="room" data-room="Unknown">Room - Unkonwn</p>
+                    <p class="years" data-years="{11}">Year: 11</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="hishomework-popup" class="popup" data-title="History Homework Club">
+                <div class="content">
+                    <h1>History Homework Club</h1>
+                    <p class="time" data-time="2-2">Time - Tuesday Lunch</p>
+                    <p class="room" data-room="History Department">Room - History Department</p>
+                    <p class="years" data-years="{7,8,9}">Year: 7,8,9</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <div id="hisgcserev-popup" class="popup" data-title="History GCSE Revision">
+                <div class="content">
+                    <h1>History GCSE Revision</h1>
+                    <p class="time" data-time="3-3">Time - After Easter</p>
+                    <p class="room" data-room="History Department">Room - History Department</p>
+                    <p class="years" data-years="{11}">Year: 11</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+            <!--extended learning -->
+            <div id="fineartgroup-popup" class="popup" data-title="Fine Art Group">
+                <div class="content">
+                    <h1>Fine Art Group</h1>
+                    <p class="time" data-time="4-3">Time - Thursdays 4-5pm</p>
+                    <p class="room" data-room="Art">Room - Art</p>
+                    <p class="years" data-years="{11}">Year: 11</p>
+                </div>
+                <div class="arrow-down"></div>
+            </div>
+        <div id="codingclub-popup" class="popup" data-title="KS3 Coding Club">
+            <div class="content">
+                <h1>KS3 Coding Club</h1>
+                <p class="time" data-time="3-3">Time - Unknown</p>
+                <p class="room" data-room="ICT">Room - ICT</p>
+                <p class="years" data-years="{7,8,9}">Year: 7,8,9</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="rasppie-popup" class="popup" data-title="Raspberry Pi Competition">
+            <div class="content">
+                <h1>Raspberry Pi Competition</h1>
+                <p class="time" data-time="3-3">Time - Unknown</p>
+                <p class="room" data-room="ICT">Room - ICT</p>
+                <p class="years" data-years="{7}">Year: 7</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="elo-popup" class="popup" data-title="ELO">
+            <div class="content">
+                <h1>ELO</h1>
+                <p class="time" data-time="3-3">Time - Unknown</p>
+                <p class="room" data-room="Unknown">Room - Unknown</p>
+                <p class="years" data-years="{7,8,9}">Year: 7,8,9</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="mentor-popup" class="popup" data-title="Peer Mentoring">
+            <div class="content">
+                <h1>Peer Mentoring</h1>
+                <p class="time" data-time="3-3">Time - Unknown</p>
+                <p class="room" data-room="Unknown">Room - Unknown</p>
+                <p class="years" data-years="{7,8,9}">Year: 7,8,9</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="tycoon-popup" class="popup" data-title="Tycoon In Schools">
+            <div class="content">
+                <h1>Tycoon In Schools</h1>
+                <p class="time" data-time="3-3">Time - Lesson</p>
+                <p class="room" data-room="Unknown">Room - Unknown</p>
+                <p class="years" data-years="{10}">Year: 10</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="subway-popup" class="popup" data-title="Subway Challenge">
+            <div class="content">
+                <h1>Subway Challenge</h1>
+                <p class="time" data-time="3-3">Time - Lesson</p>
+                <p class="room" data-room="Unknown">Room - Unknown</p>
+                <p class="years" data-years="{10,11}">Year: 10,11</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="youngent-popup" class="popup" data-title="Young Enterpise">
+            <div class="content">
+                <h1>Young Enterpise</h1>
+                <p class="time" data-time="4-2">Time - Thursday Lunch</p>
+                <p class="room" data-room="Unknown">Room - Unknown</p>
+                <p class="years" data-years="{12}">Year: 12</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="ifs-popup" class="popup" data-title="IFS Student Investor Challenge">
+            <div class="content">
+                <h1>IFS Student Investor Challenge</h1>
+                <p class="time" data-time="1-2">Time - Monday Lunch</p>
+                <p class="room" data-room="Unknown">Room - Unknown</p>
+                <p class="years" data-years="{12,13}">Year: 12,13</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="arts-popup" class="popup" data-title="Arts Award">
+            <div class="content">
+                <h1>Arts Award</h1>
+                <p class="time" data-time="3-3">Time - Lunchtimes</p>
+                <p class="room" data-room="Unknown">Room - Unknown</p>
+                <p class="years" data-years="{7,8}">Year: 7,8</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="litclub-popup" class="popup" data-title="Literature Society">
+            <div class="content">
+                <h1>Literature Society</h1>
+                <p class="time" data-time="3-3">Time - Unknown</p>
+                <p class="room" data-room="Unknown">Room - Unknown</p>
+                <p class="years" data-years="{9}">Year: 9</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="milhis-popup" class="popup" data-title="Military History Club">
+            <div class="content">
+                <h1>Military History Club</h1>
+                <p class="time" data-time="5-2">Time - Friday Lunch</p>
+                <p class="room" data-room="History">Room - History</p>
+                <p class="years" data-years="{10,11,12,13}">Year: 10,11,12,13</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+        <div id="desven-popup" class="popup" data-title="Design Ventura">
+            <div class="content">
+                <h1>Design Ventura</h1>
+                <p class="time" data-time="3-3">Time - Lesson Time</p>
+                <p class="room" data-room="DT">Room - DT</p>
+                <p class="years" data-years="{9}">Year: 9</p>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+
+
+
+    </div>
+
+
+        <!-- Holds dynamically created labels !-->
+        <div class="label-holder"></div>
+
+        <!-- Area for dropping activities -->
+        <div class="dropArea">
+            <h1>Drag Event Here to add to planner</h1>
+        </div>
+
+        <!-- Markup for timetable -->
+        <div class="timetable">
+            <table>
+                <!-- First number represents the day (e.g. Monday = 1), second represents time of day (before,lunch,after-school)-->
+                <tr>
+                    <td class="day"><h1></h1></td>
+                    <td class="day"><h1>Before School</h1></td>
+                    <td class="day"><h1>Lunch</h1></td>
+                    <td class="day"><h1>After School</h1></td>
+                </tr>
+                <tr>
+                    <td class="day"><h1>Monday</h1></td>
+                    <td class="1-1 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="1-2 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="1-3 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                </tr>
+                <tr>
+                    <td class="day"><h1>Tuesday</h1></td>
+                    <td class="2-1 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="2-2 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="2-3 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                </tr>
+                <tr>
+                    <td class="day"><h1>Wednesday</h1></td>
+                    <td class="3-1 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="3-2 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="3-3 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                </tr>
+                <tr>
+                    <td class="day"><h1>Thursday</h1></td>
+                    <td class="4-1 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="4-2 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="4-3 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                </tr>
+                <tr>
+                    <td class="day"><h1>Friday</h1></td>
+                    <td class="5-1 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="5-2 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                    <td class="5-3 day"><h1></h1><p class="tt-room"></p><p class="tt-remove"></p></td>
+                </tr>
+            </table>
+            <div class="close-timetable">
+                &#10006;
+            </div>
+            <div class="print">
+                <img src="assets/img/print-icon.png" alt="">
+            </div>
+        </div>
+
+        <!-- General Control Holder -->
+        <div class="controls">
+            <div class="opn-timetable">Open Timetable</div>
+            <div class="opn-tutorial">Tutorial</div>
+        </div>
+
+        <!-- Key -->
+        <div class="key">
+            <ul>
+                <li><div class="subject-help-key"></div><p>Subject Help</p></li>
+                <li><div class="performance-key"></div><p>Performance</p></li>
+                <li><div class="extended-learning-key"></div><p>Extended Learning</p></li>
+                <li><div class="sport-key"></div><p>Sport/Outdoor</p</li>
+            </ul>
+        </div>
+
+        <div class="tutorial-container">
+            <h1>Welcome to the Map of Opportunity</h1>
+            <p>This map displays all of the extra-curricular activities avaliable at school.</p>
+            <p>To display information about the activity hover over it and if you want it to remain click to stick it onto the page.</p>
+            <p>Once you have stuck an activity, you can drag your chosen activity to the top right corner to add it to your timetable.</p>
+            <div class="close-tutorial">
+                &#10006;
+            </div>
+        </div>
+    </body>
+</html>
