@@ -1,6 +1,7 @@
 //Two global variables used for the timetable
 var usedTimes = [];
 var currentEvents = new Array();
+var a = 0;
 
 
 $( document ).ready(function() {
@@ -10,6 +11,7 @@ $( document ).ready(function() {
     addLabel(); //Add labels
     popupHover(); //Script to make popups appear on hover
     popupClick(); //Script to stick the popups when you click on the station
+    addBtn();
     //yearSelector(); (doesnt work)
 
     //Ensures that dynamically created popups are draggable and that the draggable function isnt contantly run :)
@@ -79,8 +81,9 @@ function addLabel() {
             var scaleFactor = 1
         }
 
-        $('.label-holder').append("<p class=" + index + ">"+text+"</p>");
+        $('.label-holder').append("<p class=" + index + ">"+text+" </p>");
         $('.' + index).css("position", "absolute");
+        $('.' + index).addClass('label')
         //Only works for stations that are not at an angle
         $('.' + index).css('left',offset.left - ($('.' + index).width()/2) + eval(leftMod)*scaleFactor);
         $('.' + index).css('top',offset.top - 35 + eval(topMod*scaleFactor));
@@ -160,11 +163,11 @@ function trimSvgWhitespace() {
 }
 
 function draggable() {
-    var a = 0;
     var left = 0;
-    var top = 0
+    var top = 0;
     $( ".popup" ).draggable({
         start: function(event, ui) {
+            console.log("drag")
             //$(".dropArea").fadeIn();
         }, containment: $(document.body),
         scroll: false,
@@ -210,6 +213,21 @@ function draggable() {
             }
         }
     })
+}
+
+//Draggable doesn't work on some browsers, so added a function which allows users to click the add btn
+function addBtn() {
+    $('.add-btn').on('click', function() {
+        popup = $(this).parent();
+        currentEvents[a] = {};
+        currentEvents[a]["id"] = popup.parent().find(".id").data("id");
+        currentEvents[a]["title"] = popup.parent().data("title");
+        currentEvents[a]["time"] = popup.find(".time").data("time");
+        currentEvents[a]["room"] = popup.find(".room").data("room")
+        currentEvents[a]["years"] = popup.find(".years").data("years")
+        a++;
+        updateTimetable(currentEvents)
+    });
 }
 
 function popupID() {
@@ -259,7 +277,7 @@ function updateTimetable(events) {
                 $('.' + time).data('id', id);
             } else {
                 //Output message telling user that the time slot has been filled already
-                alert("You have used that time already!!!");
+                //alert("You have used that time already!!!");
             }
         }
     });

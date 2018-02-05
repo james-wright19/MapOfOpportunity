@@ -1,9 +1,8 @@
 //Main SVG control class -- the map!!
 .svg-wrap
-    position: relative
     height: 100%
     padding-left: 150px
-
+    width: 100%
 svg
     float: left
     position: absolute
@@ -47,6 +46,12 @@ svg
 
 .line-trip
     stroke: $trip
+
+.label-holder
+    white-space: nowrap
+
+    .label
+        display: inline-block
 
 @media #{$tablet}
     .svg-wrap
